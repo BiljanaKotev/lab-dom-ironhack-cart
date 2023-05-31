@@ -17,12 +17,15 @@ function updateSubtotal(product) {
 function calculateAll() {
   // // code in the following two lines is added just for testing purposes.
   // // it runs when only iteration 1 is completed. at later point, it can be removed.
-  // const singleProduct = document.querySelector(".product");
-  // updateSubtotal(singleProduct);
+  const singleProduct = document.querySelector(".product");
+  updateSubtotal(singleProduct);
   // // end of test
   // let product = document.getElementsByClassName("product");
   // let productArray = [...product];
   const tableBody = document.querySelector("tbody");
+  const productName = document.getElementsByClassName("name");
+  const productPrice = document.getElementsByClassName("price");
+
   tableBody.innerHTML += `<tr class="product">
           <td class="name">
             <span>Ironhack Rubber Duck</span>
@@ -36,9 +39,6 @@ function calculateAll() {
             <button class="btn btn-remove">Remove</button>
           </td>
         </tr>`;
-
-  let productName = document.getElementsByClassName("name");
-  let productPrice = document.getElementsByClassName("price");
   productName[1].innerHTML = "IronHack Beach Towel";
   productPrice[1].innerHTML = "$12.50";
 }

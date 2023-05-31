@@ -14,17 +14,16 @@ function updateSubtotal(product) {
   subTotalEl.textContent = subTotal.toFixed(2);
 }
 
-updateSubtotal("pan");
-
 function calculateAll() {
   // // code in the following two lines is added just for testing purposes.
   // // it runs when only iteration 1 is completed. at later point, it can be removed.
   // const singleProduct = document.querySelector(".product");
   // updateSubtotal(singleProduct);
   // // end of test
-
+  // let product = document.getElementsByClassName("product");
+  // let productArray = [...product];
   const tableBody = document.querySelector("tbody");
-  tableBody.innerHTML += `        <tr class="product">
+  tableBody.innerHTML += `<tr class="product">
           <td class="name">
             <span>Ironhack Rubber Duck</span>
           </td>
@@ -38,8 +37,10 @@ function calculateAll() {
           </td>
         </tr>`;
 
-  // ITERATION 3
-  //... your code goes here
+  let productName = document.getElementsByClassName("name");
+  let productPrice = document.getElementsByClassName("price");
+  productName[1].innerHTML = "IronHack Beach Towel";
+  productPrice[1].innerHTML = "$12.50";
 }
 
 calculateAll();
